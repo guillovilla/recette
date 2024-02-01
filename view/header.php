@@ -11,37 +11,14 @@
 <body>
     <nav>
         <article class="hearder-logo">
-            <img src="{{path}}assets/img/logo/logo-gold.svg" alt="logo">
+            <img src="{{path}}assets/img/logo/logo-restaurant.svg" alt="logo">
         </article>
-        <h3>Lord Reginald</h3>
-        <a href="{{path}}home"><i class="fa-solid fa-house"></i> Accueil</a>
-        <a href="{{path}}enchere/index?etat=encours"><h4><i class="fa-solid fa-spinner"></i> En cours</h4></a>
-        <a href="{{path}}enchere/index?etat=passe"><h4><i class="fa-solid fa-clock-rotate-left"></i> Passées</h4></a>
-        <a href="{{path}}enchere/create"><h4><i class="fa-solid fa-square-plus"></i> Ajoutez Enchere</h4></a>
-        <a href="{{path}}news">Actualité</a>
-        <a href="{{path}}about">À propos</a>
-        <a href="{{path}}contact/create">Nous contactez</a>
-
-        {% if guest %}
-        <a href="{{ path }}user/create"><h4>Inscrivez Membre</h4></a>
-        {% else %}
-            {% if session.privilege == 1 or session.privilege == 2 %}
-            <a href="{{ path }}user/create"><h4>Nouvel Utilisateur</h4></a>
-            {% endif %}
-        {% endif %}
-
-        {% if guest %}
+        <h3>Restaurant</h3>
+        <h3>Délicieux</h3>
+        <a href="{{path}}enchere/create"><h4>Ajoutez Recette</h4></a>
+        <a href="{{path}}user/create"><h4>Ajoutez Utilisateur </h4></a>
+        <a href="{{path}}user/index"><h4>Liste d'Usernmae </h4></a>
         <a href="{{path}}login">Login</a>
-        {% else %}
-            {% if session.privilege == 1 %}
-            <a href="{{path}}user/index"><h4>Liste d'Usernmae </h4></a>
-            {% endif %}
-
-            {% if session.privilege == 1 or session.privilege == 2 %}
-            <a href="{{path}}contact/index"><h4>Liste de contact </h4></a>
-            {% endif %}
-
-            <a class="username">Bienvenu : {{session.username}}</a>
-            <a class="log" href="{{path}}login/logout">Logout</a>
-        {% endif %}
+        <a class="username">Bienvenu : {{session.username}}</a>
+        <a class="log" href="{{path}}login/logout">Logout</a>
     </nav>
