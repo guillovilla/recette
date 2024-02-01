@@ -1,0 +1,127 @@
+body{
+    background-color: var(--couleur-gold-10);
+}
+
+/* items */
+.grille-catalogue{
+    margin-left: 250px;
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item{
+    background-color: white;
+    width: 350px; 
+    height: 500px;
+    padding: 20px;
+    margin-bottom: 40px; 
+    margin-right: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+    border: none;
+    box-shadow: 10px 5px 5px rgb(200, 199, 199);
+    align-items: center; 
+}
+
+.item-grille{
+    padding: 30px;
+    margin-bottom: 10px;
+    min-height: 350px;
+    position: relative;
+}
+
+.recommande-index{
+    position: absolute;
+    margin-top: -130px;
+    margin-left: 150px;
+    z-index: 3;
+    width: 120px;
+    opacity: 0.7;
+}
+
+.item img{
+    max-width: 100%; 
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.item hr{
+    border: 0.5px solid var(--couleur-red);
+    margin: 0;
+    width: 100%;
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
+
+.item p{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    overflow-y: auto;
+    line-height: 1.5em; 
+    text-align: center;
+    margin-bottom: 0.75em;
+    font-family: var(--police-text);
+    color: var(--couleur-blue);
+}
+
+.item a{
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1024px){
+    .grille-catalogue{
+        margin-left: 0;
+        justify-content: space-between;
+    }
+    .item{
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .item-grille{
+        min-height: 300px;
+    }
+    article{
+        display: none;
+    }
+    .username{
+        margin-top: 0px;
+    }
+    .recommande-index{
+        margin-top: -110px;
+        margin-left: 150px;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 0px){
+    .item{
+        width: 100%;
+        flex-direction: row;
+        width: 100vh;
+    }
+    .item-grille{
+        flex: 1;
+        display: flex;
+        flex-direction: column; 
+        justify-content: space-between;  
+    }
+    .item hr {
+        display: none;
+    }
+    .item img {
+        flex: 1; 
+    }
+    .item p {
+        flex: 1; 
+    }
+    .recommande-index{
+        margin-top: -110px;
+        margin-left: 190px;
+    }
+}

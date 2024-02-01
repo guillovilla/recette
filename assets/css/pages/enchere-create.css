@@ -1,0 +1,75 @@
+div.enchere-create{
+    padding: 50px 50px 50px 300px;
+    font-family: var(--police-text);
+    color: var(--couleur-blue);
+}
+
+.enchere-create form {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.enchere-create label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.enchere-create input, select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.enchere-create textarea{
+    height: 6em;
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.button-enregistrer{
+    background-color: var(--couleur-gold);
+    font-family: var(--police-Oswald);
+    font-size: medium;
+    font-weight: 500;
+    border: 0;
+    border-radius: 10px;
+    height: 3em;
+}
+
+.button-ajoute{
+    margin: 5px;
+}
+
+.enchere-create input, textarea, select{
+    margin: 0.75em 0;
+    font-family: var(--police-text);
+    color: var(--couleur-blue);
+}
+
+.text-danger{
+    color: var(--couleur-red);
+}
+
+.text-normal{
+    color: var(--couleur-blue);
+}
+
+.enchere-create a{
+    text-align: center;
+}
+
+@media screen and (max-width: 1024px){
+    div.enchere-create{
+        padding: 50px;
+    }
+    .enchere-create form {
+        width: 100%;
+    }
+    .enchere-create textarea{
+        width: 100%;
+    }
+}

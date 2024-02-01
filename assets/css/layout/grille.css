@@ -1,0 +1,22 @@
+@media screen and (max-width: 720px){
+    header{
+        display: none;
+    }
+    nav{
+        flex-flow: column;
+        display: block;
+    }
+    nav a{
+        text-align: center;
+        border-bottom: 1px solid;  
+        padding: 1em;
+    } 
+    nav a, nav button, section{
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+    aside, section{
+        flex-flow: column;
+    }
+}

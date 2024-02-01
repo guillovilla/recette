@@ -1,0 +1,8 @@
+:root {
+    --couleur-blue: #00247D;
+    --couleur-red: #CF142B;
+    --couleur-gold:  #ceb76f;
+    --couleur-gold-10:rgba(206, 184, 110, 0.1);
+    --couleur-gold-20:rgba(206, 184, 110, 0.2);
+    --couleur-gold-30: rgba(206, 182, 111, 0.3);
+}

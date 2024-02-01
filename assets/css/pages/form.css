@@ -1,0 +1,49 @@
+.form{
+    padding: 50px 50px 50px 300px;
+    font-family: var(--police-text);
+    color: var(--couleur-blue);
+    margin: 0 auto;
+}
+
+.form table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.form th {
+    background-color: var(--couleur-gold);
+    color: var(--couleur-blue);
+    text-align: left;
+    padding: 10px;
+    border: 1px solid var(--couleur-gold);
+    font-weight: bold;
+}
+
+.form td {
+    border: 1px solid var(--couleur-gold);
+    padding: 10px;
+}
+
+.form tr:nth-child(even) {
+    background-color: var(--couleur-gold-10);
+}
+
+
+.btn-danger{
+    background-color: var(--couleur-red);
+    color: #fff; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1024px){
+    .form{
+      padding: 50px;
+    }
+    .username{
+    border-bottom: none;
+    }
+}
