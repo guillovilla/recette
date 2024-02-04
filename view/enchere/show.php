@@ -4,7 +4,7 @@
         <article class="enchere-rectangle">
             <aside>
                 <div class="show-img-big">
-                    {% if enchereShow.recommande_id== enchere.id %}
+                    {% if enchereShow.recommande_id == enchere.id %}
                         <img class="recommande-show" src="{{path}}/assets/img/icones/logo-stamp-gold.svg" alt="logo-stamp-gold">
                     {% endif %}
                     <img class="enchere-stmap" src="{{path}}/assets/img/stamps/{{images[0]}}">

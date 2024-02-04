@@ -15,6 +15,7 @@
         </article>
         <h3>Restaurant</h3>
         <a href="{{path}}home"><h4>Accuile</h4></a>
+        <a href="{{path}}enchere/index"><h4>Liste de Recette</h4></a>
         <a href="{{path}}enchere/create"><h4>Ajoutez Recette</h4></a>
         <a href="{{path}}user/create"><h4>Ajoutez Utilisateur</h4></a>
         <a href="{{path}}user/index"><h4>Liste d'Utilisateur</h4></a>
