@@ -38,5 +38,17 @@ class ControllerRecette extends Controller {
             ]);
     }
 
+    public function show(){
+
+        // $recette_id = $_POST['recette_id'];
+        $recette_id = 1;
+
+        $recette = new recette;
+        $selectRecette = $recette->selectId($recette_id);
+
+        return Twig::render('recette/show.php', [
+            'recette' => $selectRecette
+        ]);
+    }
 }
 ?>
