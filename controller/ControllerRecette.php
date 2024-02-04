@@ -40,7 +40,9 @@ class ControllerRecette extends Controller {
 
     public function show(){
 
-        // $recette_id = $_POST['recette_id'];
+        $recette_id = $_POST['recette_id'];
+
+        // Pour tester
         $recette_id = 1;
 
         $recette = new recette;
@@ -53,10 +55,10 @@ class ControllerRecette extends Controller {
 
 
     public function edit(){
-        // $_POST['id'] = $_POST['recette_id'];
+        $_POST['id'] = $_POST['recette_id'];
 
         // Pour tester
-        $_POST['id'] = 2;
+        // $_POST['id'] = 2;
 
         $recette = new Recette;
         $selectRecette = $recette->selectId($_POST['id']);
@@ -69,10 +71,10 @@ class ControllerRecette extends Controller {
 
     public function update(){
         
-        // $_POST['id'] = $_POST['recette_id'];
+        $_POST['id'] = $_POST['recette_id'];
         
         // Pour tester
-        $_POST['id'] = 2;
+        // $_POST['id'] = 2;
 
         $validation = new Validation;
         extract($_POST);  
