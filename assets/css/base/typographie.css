@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+:root {
+    --police-titre:'Gloock', serif;
+    --police-text: 'Montserrat', sans-serif;
+    --police-Oswald: 'Oswald', sans-serif;
+    --police-numero: 'Playfair Display', serif;
+    --police-xs: 0.8rem;
+    --police-font-size-m: 2em;
+}
+

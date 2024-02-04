@@ -1,0 +1,290 @@
+.enchere-main{
+    padding: 50px 50px 50px 300px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    z-index: 1;
+    /* display: none; */
+}
+
+.enchere-main h1{
+    font-size: 3em;
+    font-style: italic;
+    font-weight: 500;
+    font-family: var(--police-titre);
+    color: var(--couleur-red);
+}
+
+.enchere-main p{
+    line-height: 1.2em;
+    margin-bottom: 0.75em;
+    font-family: var(--police-text);
+    color: var(--couleur-blue);
+}
+
+.enchere-main strong{
+    font-weight: 500;
+}
+
+.enchere-main b{
+    font-weight: 600;
+}
+
+.enchere-main a{
+    text-decoration: none;
+    color: white;
+}
+
+/* rectangle */
+.enchere-rectangle{
+    flex: 1;
+    display: flex;
+    flex-flow: row;
+    width: 1000px;
+    height: 300px;
+    box-shadow: 10px 5px 5px rgb(200, 199, 199);
+    box-sizing: border-box;
+}
+
+.enchere-rectangle aside{
+    flex: 1;
+    padding: 3em;
+    background-color: white;
+    position: relative;
+    flex-direction: column;
+    font-family: var(--police-text);
+    color: var(--couleur-blue);
+}
+
+.enchere-rectangle aside a{
+    color: var(--couleur-blue);
+}
+
+.show-img-big{
+    margin-top: 20px;
+}
+
+.show-imgs-small{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row;
+}
+
+.image-small{
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    opacity: 0.5;
+    object-fit: cover;
+}
+
+.recommande-show{
+    position: absolute;;
+    margin-top: -15px;
+    margin-left: 150px;
+    z-index: 3;
+    width: 80px;
+    opacity: 0.7;
+}
+
+.enchere-presentation{
+    flex: 2.5;
+    padding: 4em 6em 4em 4em;
+    background-color: var(--couleur-gold-20);
+}
+
+.enchere-detail{
+    margin-bottom: 2em;
+}
+
+.enchere-detail, .enchere-etat{
+    display: flex;
+    flex-flow: row;
+}
+
+.titre{
+    font-size: var(--police-font-size-m);
+    font-family: var(--police-Oswald);
+    color: var(--couleur-blue);
+    line-height: 1.2em;
+}
+
+.enchere-detail-liste, .enchere-prix{
+    flex: 1;
+    font-family: var(--police-text);
+    color: var(--couleur-blue);
+}
+
+.enchere-detail-liste{
+    padding-left: 20px;
+}
+
+.description{
+    flex: 1.5;
+}
+
+.enchere-prix, .enchere-temps{
+    flex: 1;
+}
+
+.enchere-prix h4{
+    margin-bottom: 15px;
+}
+
+.prix-notation{
+    font-family: var(--police-numero);
+    color: var(--couleur-red);
+    font-size: 1.5em;
+}
+
+.prix-montant{
+    font-style: italic;
+    font-family: var(--police-numero);
+    color: var(--couleur-red);
+    font-size: 3em;
+}
+
+.fa-spinner, .fa-clock-rotate-left, .fa-square-plus, .rouge{
+    font-size: 1.2em;
+    color: var(--couleur-red);
+}
+
+/* option liste */
+.enchere-main img{
+    max-width: 100%;
+    display: block;
+}
+
+.enchere-main input{
+    height: 30px;
+    width: 200px;
+}
+
+.button-mise, .button-edit{
+    height: 30px;
+    width: 200px;
+    margin: 0.75em 0;
+    background-color: var(--couleur-red);
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25);
+    font-family: var(--police-text);
+    font-weight: 500;
+    color: white;
+}
+
+.fa-backward-step, .fa-forward-step, .item-numero a{
+    color: var(--couleur-blue);
+    margin: 0 20px;
+}
+
+.item-numero a{
+    font-family: var(--police-text);
+    font-size: 1.2em;
+}
+
+.favori{
+    position: absolute;
+    bottom: 40px;
+}
+
+.recommande{
+    position: absolute;
+    bottom: 80px;
+}
+
+.fa-heart{
+    color: var(--couleur-red);
+    font-size: 25px;
+}
+
+.fa-award{
+    color: var(--couleur-gold);
+    font-size: 25px;
+}
+
+@media screen and (max-width: 1024px){
+    .enchere-main{
+        padding: 50px;
+    }
+    .enchere-rectangle{
+        margin-top: 50px;
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        width: 100vh;
+    }
+    .enchere-rectangle img{
+        margin: 0;
+    }
+    .enchere-presentation {
+        flex: 3;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .enchere-temps{
+        margin-left: 0px;
+    }
+    .fa-backward-step, .fa-forward-step{
+        display: none;
+    }
+    .enchere-rectangle aside .enchere-conteneur-image .recommande{
+        bottom: -100px;
+        right: 100px;
+        z-index: 10;
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .item-numero{
+        flex-flow: row;
+    }
+    .item-numero a{
+        margin: 0 5px;
+        padding-bottom: 30px;
+    }
+    .show-small{
+        justify-content: center;
+    }
+    .show-small-image{
+        padding: 5px;
+    }
+    .enchere-main input{
+        margin-right: 20px;
+    }
+    .recommande{
+        top: 40px;
+        left: 220px;
+        width: 150px;
+        z-index: 10;
+    }
+    .favori{
+        position: static; 
+        margin-top: 1em; 
+    }
+}
+
+@media screen and (max-width: 767px){
+    .enchere-rectangle{
+        margin-top: 0;
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        flex: 100%;
+    }
+    .enchere-detail, .enchere-etat{
+        flex-flow: column;
+    }
+    .description{
+        padding-left: 0;
+    }
+    .enchere-temps{
+        margin-top: 1em;
+    }
+    .enchere-detail-liste{
+        padding-left: 0;
+    }
+}
