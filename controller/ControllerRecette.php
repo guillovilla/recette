@@ -50,5 +50,53 @@ class ControllerRecette extends Controller {
             'recette' => $selectRecette
         ]);
     }
+
+
+    public function edit(){
+        // $_POST['id'] = $_POST['recette_id'];
+
+        // Pour tester
+        $_POST['id'] = 2;
+
+        $recette = new Recette;
+        $selectRecette = $recette->selectId($_POST['id']);
+       
+        return Twig::render('recette/edit.php', [
+            'recette' => $selectRecette
+        ]);
+    }
+
+
+    public function update(){
+        
+        // $_POST['id'] = $_POST['recette_id'];
+        
+        // Pour tester
+        $_POST['id'] = 2;
+
+        $validation = new Validation;
+        extract($_POST);  
+
+        $validation->name('nom')->value($nom)->max(200)->min(1);
+        $validation->name('description')->value($description)->max(2000)->min(1);
+        $validation->name('ingrediants')->value($description)->max(2000)->min(1);
+        $validation->name('preparation')->value($description)->max(2000)->min(1);
+
+        if(!$validation->isSuccess()){
+
+            $errors = $validation->displayErrors();
+            return Twig::render('recette/create.php', [
+                'recette' => $_POST,
+                'errors' => $errors
+            ]);
+            exit();
+        }
+
+        $recette = new Recette;
+
+        $updaterecette = $recette->update($_POST);
+       
+        RequirePage::url('recette/show/');
+    }
 }
 ?>
