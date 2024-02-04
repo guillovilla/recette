@@ -1,8 +1,8 @@
 <?php
 abstract class CRUD extends PDO {
     public function __construct(){
-        // parent::__construct('mysql:host=localhost; dbname=stampee; port=3306; charset=utf8', 'root', 'root');  //mac
-        parent::__construct('mysql:host=localhost; dbname=stampee; port=3306; charset=utf8', 'root', '');  //windows
+        parent::__construct('mysql:host=localhost; dbname=recette; port=3306; charset=utf8', 'root', 'root');  //mac
+        // parent::__construct('mysql:host=localhost; dbname=recette; port=3306; charset=utf8', 'root', '');  //windows
         // parent::__construct('mysql:host=localhost; dbname=e2296789; port=3306; charset=utf8', 'e2296789', 'JLl2AH6eOoD6Ru7pOjhO');
     }
 
@@ -31,10 +31,12 @@ abstract class CRUD extends PDO {
         $stmt = $this->query($sql);
         $count = $stmt->rowCount();
         // print_r($stmt->fetch());die();
-        if($count == 1){
+        print_r($count);
+        if($count === 1){
             return $stmt->fetch();
             // return "1";
-        }else{
+        }
+        else{
             // RequirePage::url('home/error/404');
             // return $stmt->errorInfo();
             return '0';

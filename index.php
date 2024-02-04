@@ -7,9 +7,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// define('PATH_DIR', 'http://localhost:8888/stampee/'); //mac
-// define('PATH_DIR', 'http://localhost:8000/stampee/'); //windows
-define('PATH_DIR', 'https://e2296789.webdev.cmaisonneuve.qc.ca/stampee/'); //webdev
+define('PATH_DIR', 'http://localhost:8888/recette/'); //mac
+// define('PATH_DIR', 'http://localhost:8000/recette/'); //windows
+// define('PATH_DIR', 'https://e2296789.webdev.cmaisonneuve.qc.ca/recette/'); //webdev
 
 require_once('controller/Controller.php');
 require_once('library/RequirePage.php');

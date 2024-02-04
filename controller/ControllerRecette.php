@@ -32,8 +32,8 @@ class ControllerRecette extends Controller {
 
     
             // print_r($selectRecette); die();
-            return Twig::render('enchere/index.php', [
-                'encheres' => $selectRecette
+            return Twig::render('recette/index.php', [
+                'recettes' => $selectRecette
 
             ]);
     }

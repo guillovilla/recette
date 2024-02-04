@@ -22,11 +22,7 @@ class ControllerUser extends controller {
     }
 
     public function create(){ 
-        $privilege = new Privilege;
-        $select = $privilege->select('privilege');
-        return Twig::render('user/create.php', [
-            'privileges' => $select
-        ]);
+        return Twig::render('user/create.php');
     }
 
     public function store(){
@@ -34,7 +30,6 @@ class ControllerUser extends controller {
         $validation = new Validation;
         extract($_POST);
         
-        $validation->name('utilisateur')->value($username)->max(50)->required();
         $validation->name('email')->value($email)->max(50)->required()->pattern('email');
         $validation->name('mot de passe')->value($password)->max(20)->min(6);
         $validation->name('privilege')->value($privilege_id)->required();
@@ -43,10 +38,8 @@ class ControllerUser extends controller {
             // var_dump($validation->getErrors());
             $errors =  $validation->displayErrors();
             // echo $errors;
-            $privilege = new Privilege;
-            $select = $privilege->select('privilege');
+
             return Twig::render('user/create.php', [
-                'privileges' => $select,
                 'user' => $_POST,
                 'errors' => $errors
             ]);
@@ -54,6 +47,7 @@ class ControllerUser extends controller {
         }
 
         $user = new User;
+        // echo "<pre>";
         // echo"user :<br>";print_r($user);echo"<br><br>";
         // echo"email :<br>";print_r($email);echo"<br><br>";        
         $existingUser = $user->selectValue('email', $email);
@@ -64,11 +58,8 @@ class ControllerUser extends controller {
             $errors = 'Cette adresse email est enregistrée.';
             // echo"$errors :<br>";print_r($errors);echo"<br><br>";
             // die();
-            $privilege = new Privilege;
-            $select = $privilege->select('privilege');
 
             return Twig::render('user/create.php', [
-                'privileges' => $select,
                 'user' => $_POST,
                 'errors' => $errors
             ]);
@@ -80,6 +71,8 @@ class ControllerUser extends controller {
         $salt = "H3@_l?a";
         $passwordSalt = $_POST['password'].$salt;
         $_POST['password'] = password_hash($passwordSalt, PASSWORD_BCRYPT, $options);
+        $_POST['mot_de_passe'] = $_POST['password'];
+
         $insert = $user->insert($_POST);
         RequirePage::url('login');
     }

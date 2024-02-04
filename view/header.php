@@ -17,7 +17,7 @@
         <h3>Délicieux</h3>
         <a href="{{path}}enchere/create"><h4>Ajoutez Recette</h4></a>
         <a href="{{path}}user/create"><h4>Ajoutez Utilisateur </h4></a>
-        <a href="{{path}}user/index"><h4>Liste d'Usernmae </h4></a>
+        <a href="{{path}}user/index"><h4>Liste d'Username </h4></a>
         <a href="{{path}}login">Login</a>
         <a class="username">Bienvenu : {{session.username}}</a>
         <a class="log" href="{{path}}login/logout">Logout</a>

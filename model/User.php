@@ -1,8 +1,8 @@
 <?php
 class User extends CRUD {
-    protected $table = 'user';
+    protected $table = 'utilisateur';
     protected $primaryKey = 'id';
-    protected $fillable = ['username', 'email', 'phone', 'password', 'tempPassword', 'privilege_id'];
+    protected $fillable = ['email', 'mot_de_passe', 'privilege_id'];
 
     public function checkUser($email, $password = null){
         $sql = "SELECT * FROM $this->table WHERE email = ?";
@@ -19,15 +19,13 @@ class User extends CRUD {
             
             if($password != null){
                 // check password
-                if(password_verify($saltPassword, $info_user['password'])){
+                if(password_verify($saltPassword, $info_user['mot_de_passe'])){
                     //session
                     session_regenerate_id();
-                    $_SESSION['user_id'] = $info_user['id'];
                     $_SESSION['email'] = $info_user['email'];
-                    $_SESSION['username'] = $info_user['username'];
                     $_SESSION['privilege'] = $info_user['privilege_id'];
                     $_SESSION['fingerPrint'] = md5($_SERVER['HTTP_USER_AGENT'].$_SERVER['REMOTE_ADDR']);
-                    RequirePage::url('enchere');
+                    RequirePage::url('user');
                     exit();
                 }else{
                     $errors = "<ul><li>Verifier le mot de passe</li></ul>";
@@ -61,5 +59,8 @@ class User extends CRUD {
         $count = $stmt->rowCount();
         return $count;
     }
+
+
+
 }
 ?>
