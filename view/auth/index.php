@@ -1,12 +1,13 @@
 {{ include('header.php', {title: 'Login'}) }}
 
+
     <div class="enchere-create">
         <form action="{{path}}login/auth" method="post">
             <label>Email
-                <input type="email" name="email" value="{{user.email}}">
+                <input type="email" name="email" value="{{usager.email}}">
             </label>
             <label>Mot de passe
-                <input type="password" name="password" value="{{user.password}}">
+                <input type="password" name="password" value="{{usager.mot_de_passe}}">
             </label>
             <span class="text-danger">{{ errors | raw }}</span>
             <br>
